@@ -4,7 +4,7 @@ subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 title: Modern conscious homes
 subtitle: We design every project as a one-off
-image: /img/home-jumbotron.jpg
+image: /img/modern-home.jpg
 mainpitch:
   title: Why A.L.L. Holdings?
   description: >
