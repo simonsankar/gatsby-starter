@@ -1,22 +1,20 @@
 ---
-templateKey: index-page
-title: Great coffee with a conscience
-subtitle: my subtitle
-image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
+templateKey: index-page
+title: Modern conscious homes
+subtitle: We design every project as a one-off
+image: /img/home-jumbotron.jpg
 mainpitch:
-  title: Why Kaldi
+  title: Why A.L.L. Holdings?
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+    A.L.L Holdings is the real estate for everyone who believes that great homes
+    shouldn't just a roof over head, it should compliment life. We source all of
+    our materials directly from small scale sustainable producers and make sure
+    part of the profits are reinvested in their communities.
+description: A.L.L. Holdings is the ultimate hub of construction, development
+  and innovation. We take planning and development seriously and we’re glad to
+  offer our services where it may be needed.
 intro:
   blurbs:
     - image: /img/coffee.png
