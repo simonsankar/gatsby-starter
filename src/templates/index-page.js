@@ -14,25 +14,42 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => (
-  <div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="columns">
-                <div className="column is-4">
-                  <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
-                    {title}
-                  </h1>
+  <>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundPosition: `top left`,
+        backgroundAttachment: `fixed`,
+      }}
+    >
+      <section className="section section--gradient">
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="columns">
+                  <div className="column is-8">
+                    <h1 className="has-text-white has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+                      {title}
+                    </h1>
+                    <p className="has-text-white">{description}</p>
+                  </div>
+                  <div className="column is-4">
+                    <div className="home-subtitle">
+                      <span className="is-size-5">{subtitle}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="column is-8">{/* <h1>{subheading}</h1> */}</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -80,7 +97,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
+  </>
 );
 
 IndexPageTemplate.propTypes = {
@@ -119,8 +136,6 @@ IndexPage.propTypes = {
   }),
 };
 
-export default IndexPage;
-
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
@@ -157,3 +172,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default IndexPage;
