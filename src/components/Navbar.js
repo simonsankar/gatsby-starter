@@ -8,7 +8,6 @@ const Navbar = class extends React.Component {
       active: false,
       navBarActiveClass: "",
     };
-    console.log(window.location);
   }
 
   toggleHamburger = () => {

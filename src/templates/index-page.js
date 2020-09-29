@@ -15,42 +15,42 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <>
-    <div
-      className="full-width-image margin-top-0"
+    <section
+      className="section section--gradient"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
+        backgroundPosition: `100%`,
+        backgroundSize: "30%",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="columns">
-                  <div className="column is-8">
-                    <h1 className="has-text-white has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
-                      {title}
-                    </h1>
-                    <p className="has-text-white">{description}</p>
-                  </div>
-                  <div className="column is-4">
-                    <div className="home-subtitle">
-                      <span className="is-size-5">{subtitle}</span>
-                    </div>
+      <div className="container">
+        <div className="section">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="columns">
+                <div className="column is-8">
+                  <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+                    {title}
+                  </h1>
+                  <p className="">{description}</p>
+                  
+                </div>
+                <div className="column is-4">
+                  <div className="home-subtitle">
+                    <span className="is-size-5">{subtitle}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <section className="section section--gradient">
+    <section className="section has-background-grey-lighter">
       <div className="container">
         <div className="section">
           <div className="columns">
