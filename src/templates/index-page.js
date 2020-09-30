@@ -36,7 +36,6 @@ export const IndexPageTemplate = ({
                     {title}
                   </h1>
                   <p className="">{description}</p>
-                  
                 </div>
                 <div className="column is-4">
                   <div className="home-subtitle">
@@ -61,7 +60,7 @@ export const IndexPageTemplate = ({
                     <h1 className="title">{mainpitch.title}</h1>
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <p>{mainpitch.description}</p>
                   </div>
                 </div>
                 <div className="columns">

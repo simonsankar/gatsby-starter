@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { globalHistory } from "@reach/router";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -29,9 +30,9 @@ const Navbar = class extends React.Component {
       }
     );
   };
-
   render() {
-    const { pathname } = window.location;
+    const { pathname } = globalHistory.location;
+    console.log(pathname);
     return (
       <nav
         className="navbar is-transparent"
