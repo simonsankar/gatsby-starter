@@ -2,9 +2,6 @@
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
-title: Modern conscious homes
-subtitle: We design every project as a one-off
-image: /img/image.png
 mainpitch:
   title: Why A.L.L. Holdings?
   description: >
@@ -12,9 +9,6 @@ mainpitch:
     shouldn't just a roof over head, it should compliment life. We source all of
     our materials directly from small scale sustainable producers and make sure
     part of the profits are reinvested in their communities.
-description: A.L.L. Holdings is the ultimate hub of construction, development
-  and innovation. We take planning and development seriously and we’re glad to
-  offer our services where it may be needed.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -50,6 +44,12 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+about:
+  title: Modern conscious homes
+  subtitle: Modern conscious homes
+  subtext: Modern conscious homes
+subtitle: We design every project as a one-off
+title: Modern conscious homes
 main:
   heading: Great coffee with no compromises
   description: >
@@ -66,4 +66,14 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+hero:
+  title: Modern conscious homes
+  subtitle: We design every project as a one-off
+  subtext: A.L.L. Holdings is the ultimate hub of construction, development and
+    innovation. We take planning and development seriously and we’re glad to
+    offer our services where it may be needed.
+image: /img/image.png
+description: A.L.L. Holdings is the ultimate hub of construction, development
+  and innovation. We take planning and development seriously and we’re glad to
+  offer our services where it may be needed.
 ---
