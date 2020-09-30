@@ -45,9 +45,10 @@ intro:
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
 about:
-  title: Modern conscious homes
-  subtitle: Modern conscious homes
+  title: Why A.L.L. Holdings?
+  subtitle: Passionate about building
   subtext: Modern conscious homes
+  description: We like to build stuff
 subtitle: We design every project as a one-off
 title: Modern conscious homes
 main:
@@ -72,6 +73,7 @@ hero:
   subtext: A.L.L. Holdings is the ultimate hub of construction, development and
     innovation. We take planning and development seriously and we’re glad to
     offer our services where it may be needed.
+  image: /img/image.png
 image: /img/image.png
 description: A.L.L. Holdings is the ultimate hub of construction, development
   and innovation. We take planning and development seriously and we’re glad to
