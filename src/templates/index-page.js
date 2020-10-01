@@ -6,25 +6,18 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  subtitle,
-  mainpitch,
-  description,
-  intro,
-}) => (
+export const IndexPageTemplate = ({ hero, about }) => (
   <>
     <section
       className="section section--gradient"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `100%`,
-        backgroundSize: "30%",
-        backgroundRepeat: "no-repeat",
-      }}
+      // style={{
+      //   backgroundImage: `url(${
+      //     !!hero.image.childImageSharp ? image.childImageSharp.fluid.src : image
+      //   })`,
+      //   backgroundPosition: `100%`,
+      //   backgroundSize: "30%",
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       <div className="container">
         <div className="section">
@@ -33,13 +26,13 @@ export const IndexPageTemplate = ({
               <div className="columns">
                 <div className="column is-8">
                   <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
-                    {title}
+                    {hero.title}
                   </h1>
-                  <p className="">{description}</p>
+                  <p className="">{hero.subtext}</p>
                 </div>
                 <div className="column is-4">
                   <div className="home-subtitle">
-                    <span className="is-size-5">{subtitle}</span>
+                    <span className="is-size-5">{hero.subtitle}</span>
                   </div>
                 </div>
               </div>
@@ -57,21 +50,14 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    <h3 className="has-text-weight-semibold is-size-2">
+                      {about.title}
+                    </h3>
                   </div>
                   <div className="tile">
-                    <p>{mainpitch.description}</p>
+                    <p>{about.description}</p>
                   </div>
                 </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {/* {heading} */}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
@@ -100,14 +86,8 @@ export const IndexPageTemplate = ({
 );
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  hero: PropTypes.object,
+  about: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
@@ -115,14 +95,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        subtitle={frontmatter.subtitle}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
+      <IndexPageTemplate hero={frontmatter.hero} about={frontmatter.about} />
     </Layout>
   );
 };
@@ -135,41 +108,59 @@ IndexPage.propTypes = {
   }),
 };
 
-export const pageQuery = graphql`
-  query IndexPageTemplate {
+export const query = graphql`
+  {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        subtitle
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        mainpitch {
+        about {
           title
+          subtitle
           description
         }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
+        hero {
+          title
+          subtitle
+          subtext
         }
       }
     }
   }
 `;
+// export const pageQuery = graphql`
+//   query IndexPageTemplate {
+//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+//       frontmatter {
+//         title
+//         subtitle
+//         image {
+//           childImageSharp {
+//             fluid(maxWidth: 2048, quality: 100) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         mainpitch {
+//           title
+//           description
+//         }
+//         description
+//         intro {
+//           blurbs {
+//             image {
+//               childImageSharp {
+//                 fluid(maxWidth: 240, quality: 64) {
+//                   ...GatsbyImageSharpFluid
+//                 }
+//               }
+//             }
+//             text
+//           }
+//           heading
+//           description
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default IndexPage;
