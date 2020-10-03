@@ -24,7 +24,7 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="columns">
-                <div className="column is-8">
+                <div className="column is-4">
                   <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
                     {hero.title}
                   </h1>
@@ -47,34 +47,20 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {about.title}
-                    </h3>
-                  </div>
-                  <div className="tile">
-                    <p>{about.description}</p>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
+              <div className="columns">
+                <div className="column is-4 is-hidden-mobile">
                   <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
+                    {about.title}
                   </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
+                </div>
+                <div className="column is-4">
+                  <h3 className="has-text-weight-semibold is-size-2">
+                    {about.title}
+                  </h3>
+                </div>
+                <p>{about.description}</p>
+                <div className="column is-4">
+                  <p>{about.description}</p>
                 </div>
               </div>
             </div>

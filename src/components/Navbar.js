@@ -73,6 +73,46 @@ const Navbar = class extends React.Component {
               </Link>
               <Link
                 className={
+                  pathname === "/services"
+                    ? "navbar-item navbar-item-active"
+                    : "navbar-item"
+                }
+                to="/services"
+              >
+                Services
+              </Link>
+              <Link
+                className={
+                  pathname === "/resources"
+                    ? "navbar-item navbar-item-active"
+                    : "navbar-item"
+                }
+                to="/resources"
+              >
+                Resources
+              </Link>
+              <Link
+                className={
+                  pathname === "/affiliates"
+                    ? "navbar-item navbar-item-active"
+                    : "navbar-item"
+                }
+                to="/affiliates"
+              >
+                Affiliates
+              </Link>
+              <Link
+                className={
+                  pathname === "/gallery"
+                    ? "navbar-item navbar-item-active"
+                    : "navbar-item"
+                }
+                to="/gallery"
+              >
+                Gallery
+              </Link>
+              <Link
+                className={
                   pathname === "/products"
                     ? "navbar-item navbar-item-active"
                     : "navbar-item"
@@ -100,9 +140,6 @@ const Navbar = class extends React.Component {
                 to="/contact"
               >
                 Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
               </Link>
             </div>
           </div>
