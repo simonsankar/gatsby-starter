@@ -11,7 +11,7 @@ about:
   title: Modern conscious homes
   subtitle: Modern conscious homes
   description: Modern conscious homes and stuff
-  image: /img/image.png
+  image: /img/index.jpg
   quote: We strive for the best solutions always.
 services:
   title: What can we offer?
