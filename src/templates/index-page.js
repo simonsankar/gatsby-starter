@@ -10,21 +10,24 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
   <>
     <section
       className="section section--gradient"
-      // style={{
-      //   backgroundImage: `url(${
-      //     !!hero.image.childImageSharp ? image.childImageSharp.fluid.src : image
-      //   })`,
-      //   backgroundPosition: `100%`,
-      //   backgroundSize: "30%",
-      //   backgroundRepeat: "no-repeat",
-      // }}
+      style={{
+        backgroundImage: `url(${
+          !!hero.image.childImageSharp
+            ? hero.image.childImageSharp.fluid.src
+            : hero.image
+        })`,
+        backgroundPosition: `100%`,
+        backgroundSize: "30%",
+        backgroundRepeat: "no-repeat",
+        height: `calc(75vh - 68.5px)`,
+      }}
     >
       <div className="container">
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="columns">
-                <div className="column is-4">
+                <div className="column is-8">
                   <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
                     {hero.title}
                   </h1>
@@ -49,9 +52,14 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
             <div className="column is-10 is-offset-1">
               <div className="columns">
                 <div className="column is-4 is-hidden-mobile">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    {about.title}
-                  </h3>
+                  <image
+                    src={
+                      !!about.image.childImageSharp
+                        ? about.image.childImageSharp.fluid.src
+                        : about.image
+                    }
+                    alt="about"
+                  />
                 </div>
                 <div className="column is-4">
                   <h3 className="has-text-weight-semibold is-size-2">
@@ -103,20 +111,31 @@ export const query = graphql`
           title
           subtitle
           description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                src
+              }
+            }
+          }
         }
         hero {
           title
           subtitle
           subtext
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                src
+              }
+            }
+          }
         }
         services {
           title
           description
           blurbs {
             caption
-            image {
-              absolutePath
-            }
             text
           }
         }
