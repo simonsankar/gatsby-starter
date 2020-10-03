@@ -66,6 +66,8 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Subtitle, name: subtitle, widget: string },
                   { label: Description, name: description, widget: text },
+                  { label: Quote, name: quote, widget: text },
+                  { label: Image, name: image, widget: image },
                 ],
             }
           - {
