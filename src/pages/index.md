@@ -10,9 +10,14 @@ hero:
 about:
   title: Modern conscious homes
   subtitle: Modern conscious homes
-  description: Modern conscious homes and stuff
+  description: Lorem Ipsum is simply dummy text of the printing and typesetting
+    industry. Lorem Ipsum has been the industry's standard dummy text ever since
+    the 1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book.
   image: /img/index.jpg
-  quote: We strive for the best solutions always.
+  quote: We strive for the best solutions always. It has survived not only five
+    centuries, but also the leap into electronic typesetting, remaining
+    essentially unchanged.
 services:
   title: What can we offer?
   description: We specialize in a lot of different things.
