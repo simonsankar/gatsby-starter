@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({ hero, about, services }) => (
   <>
@@ -52,7 +50,8 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
             <div className="column is-10 is-offset-1">
               <div className="columns">
                 <div className="column is-4 is-hidden-mobile">
-                  <image
+                  <img
+                    className="image"
                     src={
                       !!about.image.childImageSharp
                         ? about.image.childImageSharp.fluid.src
@@ -65,10 +64,10 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
                   <h3 className="has-text-weight-semibold is-size-2">
                     {about.title}
                   </h3>
-                </div>
-                <p>{about.description}</p>
-                <div className="column is-4">
                   <p>{about.description}</p>
+                </div>
+                <div className="column is-4">
+                  <p>{about.quote}</p>
                 </div>
               </div>
             </div>
@@ -111,6 +110,7 @@ export const query = graphql`
           title
           subtitle
           description
+          quote
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
