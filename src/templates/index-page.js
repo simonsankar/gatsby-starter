@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
-export const IndexPageTemplate = ({ hero, about }) => (
+export const IndexPageTemplate = ({ hero, about, services }) => (
   <>
     <section
       className="section section--gradient"
@@ -88,6 +88,7 @@ export const IndexPageTemplate = ({ hero, about }) => (
 IndexPageTemplate.propTypes = {
   hero: PropTypes.object,
   about: PropTypes.object,
+  services: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
@@ -121,6 +122,17 @@ export const query = graphql`
           title
           subtitle
           subtext
+        }
+        services {
+          title
+          description
+          blurbs {
+            caption
+            image {
+              absolutePath
+            }
+            text
+          }
         }
       }
     }

@@ -1,6 +1,4 @@
 ---
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 about:
   title: Modern conscious homes
