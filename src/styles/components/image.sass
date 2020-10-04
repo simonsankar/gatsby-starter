@@ -11,11 +11,30 @@
     justify-content: center
     align-items: center
 
-.full-width-image
-    width: 100vw
-    height: 400px
-    background-size: cover
-    background-position: bottom
-    display: flex
-    justify-content: center
-    align-items: center
+
+.image
+    &__container
+        position: relative
+        &::before
+            position: relative
+            display: block
+            content: ""
+            top: -1.5rem
+            height: 3px
+            width: 100px
+            background-color: $primary
+    &__full-width
+        width: 100vw
+        height: 400px
+        background-size: cover
+        background-position: bottom
+        display: flex
+        justify-content: center
+        align-items: center
+    &__semi-circle
+        position: relative
+        height: auto
+        border-top-right-radius: 50%
+        border-bottom-right-radius: 50%
+        
+        

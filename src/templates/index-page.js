@@ -17,24 +17,22 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
         backgroundPosition: `100%`,
         backgroundSize: "30%",
         backgroundRepeat: "no-repeat",
-        height: `calc(75vh - 68.5px)`,
+        height: `calc(500px - 68.5px)`,
       }}
     >
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="columns">
-                <div className="column is-8">
-                  <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
-                    {hero.title}
-                  </h1>
-                  <p className="">{hero.subtext}</p>
-                </div>
-                <div className="column is-4">
-                  <div className="home-subtitle">
-                    <span className="is-size-5">{hero.subtitle}</span>
-                  </div>
+            <div className="columns">
+              <div className="column is-8">
+                <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+                  {hero.title}
+                </h1>
+                <p className="">{hero.subtext}</p>
+              </div>
+              <div className="column is-4">
+                <div className="home-subtitle">
+                  <span className="is-size-5">{hero.subtitle}</span>
                 </div>
               </div>
             </div>
@@ -47,11 +45,11 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="columns">
-                <div className="column is-4 is-hidden-mobile">
+            <div className="columns is-vcentered">
+              <div className="column is-4 is-hidden-mobile">
+                <div className="image__container">
                   <img
-                    className="image"
+                    className="image__semi-circle"
                     src={
                       !!about.image.childImageSharp
                         ? about.image.childImageSharp.fluid.src
@@ -60,14 +58,24 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
                     alt="about"
                   />
                 </div>
-                <div className="column is-4">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    {about.title}
-                  </h3>
-                  <p>{about.description}</p>
-                </div>
-                <div className="column is-4">
-                  <p>{about.quote}</p>
+              </div>
+              <div className="column is-4">
+                <h3 className="has-text-weight-semibold is-size-2">
+                  {about.title}
+                </h3>
+                <p>{about.description}</p>
+                <a href="/about" class="btn mt-3">
+                  <span>Read More</span>
+                  <span className="icon">
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+              <div className="column is-4">
+                <div className="block">
+                  <blockquote>
+                    <p>{about.quote}</p>
+                  </blockquote>
                 </div>
               </div>
             </div>
