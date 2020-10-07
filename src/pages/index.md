@@ -28,4 +28,5 @@ services:
     - caption: Hardware & Materials
       image: /img/jumbotron.jpg
       text: Equipment for everything to build anything.
+  image: /img/jumbotron.jpg
 ---
