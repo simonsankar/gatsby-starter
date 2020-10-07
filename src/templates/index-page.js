@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/Layout";
+import { ServiceCard } from "../components/ServiceCard";
 
 export const IndexPageTemplate = ({ hero, about, services }) => (
   <>
+    {/* Hero */}
     <section
       className="section section--gradient"
       style={{
@@ -40,7 +43,7 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
         </div>
       </div>
     </section>
-
+    {/* About */}
     <section className="section has-background-grey-lighter">
       <div className="container">
         <div className="section">
@@ -66,9 +69,10 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
                 <p>{about.description}</p>
                 <a href="/about" class="btn mt-3">
                   <span>Read More</span>
-                  <span className="icon">
-                    <i class="fas fa-arrow-right"></i>
-                  </span>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{ marginLeft: 15 }}
+                  />
                 </a>
               </div>
               <div className="column is-4">
@@ -79,6 +83,53 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* Services */}
+    <section>
+      <div className="columns">
+        <div className="column is-half has-background-primary">
+          <div className="section">
+            <h3 className="has-text-weight-semibold is-size-2 has-text-white">
+              {services.title}
+            </h3>
+            <p className="has-text-white ">{services.description}</p>
+            <div className="columns is-mobile mt-3">
+              {services.blurbs.map((blurb) => (
+                <ServiceCard blurb={blurb} />
+              ))}
+            </div>
+            <p className="has-text-white ">{services.description}</p>
+            <a className="button is-dark is-large mt-3">Learn more</a>
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundImage: `url(${
+              !!services.image.childImageSharp
+                ? services.image.childImageSharp.fluid.src
+                : services.image
+            })`,
+            backgroundPosition: `top left`,
+            backgroundAttachment: `fixed`,
+            filter: `grayscale(95%)`,
+          }}
+          className="column is-half"
+        >
+          hi
+        </div>
+      </div>
+    </section>
+
+    <section className="section has-background-white">
+      <div className="container">
+        <div className="section">
+          <div className="columns is-vcentered px-0">
+            {services.blurbs.map((blurb) => (
+              <ServiceCard blurb={blurb} />
+            ))}
           </div>
         </div>
       </div>
@@ -97,7 +148,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate hero={frontmatter.hero} about={frontmatter.about} />
+      <IndexPageTemplate
+        hero={frontmatter.hero}
+        about={frontmatter.about}
+        services={frontmatter.services}
+      />
     </Layout>
   );
 };
@@ -142,6 +197,13 @@ export const query = graphql`
         services {
           title
           description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                src
+              }
+            }
+          }
           blurbs {
             caption
             text
@@ -151,41 +213,5 @@ export const query = graphql`
     }
   }
 `;
-// export const pageQuery = graphql`
-//   query IndexPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-//       frontmatter {
-//         title
-//         subtitle
-//         image {
-//           childImageSharp {
-//             fluid(maxWidth: 2048, quality: 100) {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//         mainpitch {
-//           title
-//           description
-//         }
-//         description
-//         intro {
-//           blurbs {
-//             image {
-//               childImageSharp {
-//                 fluid(maxWidth: 240, quality: 64) {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//             text
-//           }
-//           heading
-//           description
-//         }
-//       }
-//     }
-//   }
-// `;
 
 export default IndexPage;
