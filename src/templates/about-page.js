@@ -1,63 +1,64 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Header from "../components/Header";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
+export const AboutPageTemplate = ({ hero, intro, main }) => {
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+    <>
+      <Header header={hero} />
+      <section className="section has-background-white">Content</section>
+    </>
+  );
+};
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+  hero: PropTypes.object,
+  intro: PropTypes.object,
+  main: PropTypes.object,
+};
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        hero={frontmatter.hero}
+        // intro={frontmatter.intro}
+        // main={frontmatter.main}
       />
     </Layout>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+  query AboutPage {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       frontmatter {
-        title
+        hero {
+          title
+          subtitle
+          image {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
       }
     }
   }
-`
+`;

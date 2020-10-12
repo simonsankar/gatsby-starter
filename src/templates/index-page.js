@@ -10,7 +10,7 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
   <>
     {/* Hero */}
     <section
-      className="section section--gradient"
+      className="section section--gradient has-background-white-bis"
       style={{
         backgroundImage: `url(${
           !!hero.image.childImageSharp
@@ -164,7 +164,7 @@ IndexPage.propTypes = {
 };
 
 export const query = graphql`
-  {
+  query LandingPage {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         about {
