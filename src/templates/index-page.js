@@ -116,10 +116,8 @@ export const IndexPageTemplate = ({ hero, about, services }) => (
             backgroundAttachment: `fixed`,
             filter: `grayscale(95%)`,
           }}
-          className="column is-half"
-        >
-          hi
-        </div>
+          className="column is-half is-hidden-mobile"
+        ></div>
       </div>
     </section>
 
