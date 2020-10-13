@@ -113,6 +113,18 @@ collections:
                   { label: Image, name: image, widget: image },
                 ],
             }
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { label: Additional, name: additional, widget: text },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

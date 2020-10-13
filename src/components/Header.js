@@ -4,7 +4,7 @@ import React from "react";
 export default ({ header }) => {
   return (
     <>
-      <section className="section has-background-white-bis padding-y-0">
+      <section className="section has-background-grey-lighter padding-y-0">
         <div className="container">
           <div className="section">
             <div className="columns">
@@ -32,7 +32,7 @@ export default ({ header }) => {
           backgroundPosition: `center center`,
           backgroundRepeat: "none",
           filter: "grayscale(.5)",
-          height: "350px",
+          height: "400px",
         }}
       ></div>
     </>
