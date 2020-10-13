@@ -21,7 +21,7 @@ intro:
     porta. Donec volutpat vulputate nunc, non dictum est ultricies in. Sed at
     justo augue. Aenean enim libero, lobortis sit amet commodo sit amet, semper
     id magna"
-  image: /img/products-grid2.jpg
+  image: /img/image.png
 ---
 
 ### About
